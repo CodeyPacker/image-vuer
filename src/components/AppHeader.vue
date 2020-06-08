@@ -7,7 +7,11 @@
 </template>
 
 <script>
+// Connect action to component via "mapActions"
+import { mapActions } from 'vuex'
+
 export default {
-  name: 'AppHeader'
+  name: 'AppHeader',
+  methods: mapActions(['login'])
 }
 </script>
