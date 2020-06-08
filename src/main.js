@@ -8,7 +8,7 @@ Vue.use(VueRouter);
 
 // Tell it about the different routes in the app
 // mode: 'history' switches from hash to browser router
-const router = new VueRouter({
+export const router = new VueRouter({
   mode: 'history',
   routes: [
     { path: '/oath2/callback', component: AuthHandler }
