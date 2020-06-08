@@ -7,6 +7,7 @@ import AuthHandler from './components/AuthHandler';
 Vue.use(VueRouter);
 
 // Tell it about the different routes in the app
+// mode: 'history' switches from hash to browser router
 const router = new VueRouter({
   mode: 'history',
   routes: [
