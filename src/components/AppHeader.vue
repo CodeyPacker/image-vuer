@@ -7,11 +7,19 @@
 </template>
 
 <script>
-// Connect action to component via "mapActions"
+// Connect login action to component via "mapActions"
 import { mapActions } from 'vuex'
 
 export default {
   name: 'AppHeader',
   methods: mapActions(['login'])
 }
+
+// if other methods are needed use this syntax:
+
+//  methods: {
+//    ...mapActions(['login']),
+//    newMethod() {
+//  }
+
 </script>
