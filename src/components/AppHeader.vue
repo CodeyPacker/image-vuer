@@ -5,9 +5,9 @@
     </a>
     <div class="right menu">
       <div v-if="isLoggedIn" class="horizontal">
-        <a href="#" class="item" @click="login">Galleries</a>
-        <a href="#" class="item" @click="login">Upload</a>
-        <a href="#" class="item" @click="login">Logout</a>
+        <a href="#" class="item">Galleries</a>
+        <a href="#" class="item">Upload</a>
+        <a href="#" class="item" @click="logout">Logout</a>
       </div>
 
       <a v-else href="#" class="ui item" @click="login">
@@ -23,8 +23,8 @@ import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'AppHeader',
-  computed: mapGetters(['isLoggedIn']),
-  methods: mapActions(['login'])
+  computed: mapGetters(['isLoggedIn', ]),
+  methods: mapActions(['login', 'logout'])
 }
 
 // if other methods are needed use this syntax:
