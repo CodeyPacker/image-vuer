@@ -13,7 +13,7 @@ const actions = {
   // example: mutations.setToken() is bad
   // Use: commit('mutation', argument)
   login: () => {
-    api.login();
+    api.login(); // Redirect to api.imgur.com
   },
   logout: ({ commit }) => {
     commit('setToken', null);
@@ -25,3 +25,10 @@ const mutations = {
     state.token = token;
   }
 };
+
+export default {
+  state,
+  getters,
+  mutations,
+  actions
+}
