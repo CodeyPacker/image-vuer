@@ -13,10 +13,9 @@ const actions = {
   // with a bunch of helpers, such as "rootState"
 
   async fetchImages({ rootState }) {
-    const { token } = rootState.auth.token;
+    const { token } = rootState.auth;
     const response = await api.fetchImages(token);
     console.log(response);
-
   }
 }
 
@@ -26,9 +25,3 @@ const mutations = {
   }
 }
 
-export default {
-  state,
-  getters,
-  mutations,
-  actions
-}
