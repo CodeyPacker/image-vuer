@@ -1,15 +1,18 @@
 const state = {
-
+  images: []
 }
 
 const getters = {
-
-}
-
-const mutations = {
-
+  allImages: state => state.images
 }
 
 const actions = {
-
+  fetchImages() {}
 }
+
+const mutations = {
+  setImages: (state, images) => {
+    state.images = images
+  }
+}
+
