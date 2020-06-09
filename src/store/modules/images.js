@@ -12,10 +12,10 @@ const actions = {
   // NOTE: The first argument passed to actions is an object
   // with a bunch of helpers, such as "rootState"
 
-  async fetchImages({ rootState }) {
-    const { token } = rootState.auth;
-    const response = await api.fetchImages(token);
-    console.log(response);
+  async fetchImages({ rootState, commit }) {
+    const { token } = rootState.auth
+    const response = await api.fetchImages(token)
+    commit('setImages', response.data.data)
   }
 }
 
@@ -25,3 +25,9 @@ const mutations = {
   }
 }
 
+export default {
+  state,
+  getters,
+  actions,
+  mutations
+}
