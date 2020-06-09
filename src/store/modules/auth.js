@@ -1,14 +1,14 @@
-import api from '../../api/imgur';
-import qs from 'qs';
-import { router } from '../../main';
+import api from '../../api/imgur'
+import qs from 'qs'
+import { router } from '../../main'
 
 const state = {
   token: window.localStorage.getItem('imgur_token')
-};
+}
 
 const getters = {
   isLoggedIn: state => !!state.token
-};
+}
 
 const actions = {
   // commit is a function that is used to call the mutations
@@ -19,26 +19,26 @@ const actions = {
   // with a bunch of helpers, such as "commit"
 
   login: () => {
-    api.login(); // Redirect to api.imgur.com
+    api.login() // Redirect to api.imgur.com
   },
   finalizeLogin({ commit }, hash) {
-    const queryString = qs.parse(hash.replace('#', ''));
+    const queryString = qs.parse(hash.replace('#', ''))
 
-    commit('setToken', queryString.access_token); // update state with access token
-    window.localStorage.setItem('imgur_token', queryString.access_token);
-    router.push('/'); // update url path to remove queries
+    commit('setToken', queryString.access_token) // update state with access token
+    window.localStorage.setItem('imgur_token', queryString.access_token)
+    router.push('/') // update url path to remove queries
   },
   logout: ({ commit }) => {
-    commit('setToken', null);
-    window.localStorage.removeItem('imgur_token');
+    commit('setToken', null)
+    window.localStorage.removeItem('imgur_token')
   }
-};
+}
 
 const mutations = {
   setToken: (state, token) => {
-    state.token = token;
+    state.token = token
   }
-};
+}
 
 export default {
   state,

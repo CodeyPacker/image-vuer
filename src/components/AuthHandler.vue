@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from 'vuex'
 
 export default {
   name: 'AuthHandler',
   methods: mapActions(['finalizeLogin']),
   created() {
-    this.finalizeLogin(window.location.hash); // pass everything to right of hash in url
+    this.finalizeLogin(window.location.hash) // pass everything to right of hash in url
   }
-};
+}
 </script>
