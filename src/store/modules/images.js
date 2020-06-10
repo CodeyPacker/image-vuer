@@ -16,6 +16,11 @@ const actions = {
     const { token } = rootState.auth
     const response = await api.fetchImages(token)
     commit('setImages', response.data.data)
+  },
+
+  uploadImages( { commit }, images) {
+    const images =
+    console.log(images)
   }
 }
 

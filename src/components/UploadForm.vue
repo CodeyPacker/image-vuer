@@ -1,13 +1,27 @@
 <template>
   <div class="dropper">
-    <input type="file" />
+    <!--
+      By using $event.target.files like this,
+      I can pass the images directly as an argument
+
+      (the '$event' tells vue that I want to take the
+      event object from @change, instead of looking for a variable, etc...)
+    -->
+    <input
+      type="file"
+      @change="uploadImages($event.target.files)"
+      multiple
+      accept="image/*"
+      />
     <span>Drag files here!</span>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
-  name: 'UploadForm'
+  name: 'UploadForm',
+  methods: mapActions(['uploadImages'])
 }
 </script>
 
