@@ -24,6 +24,22 @@ export default {
         Authorization: `Bearer ${token}`
       }
     })
+  },
 
+  uploadImages(images, token) {
+    const promises = Array.from(images).map(image => {
+      // Create formData with the actual image file, rather than a reference to it
+      const formData = new FormData()
+      // use the key 'image', because imgur specifically requires it
+      formData.append('image', image)
+
+      return axios.post(`${ROOT_URL}/3/image`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+    })
+
+    return Promise.all(promises) // wait for all other promises to resolve
   }
 }
