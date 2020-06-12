@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-wrapper">
     <AppHeader></AppHeader>
     <div class="ui container">
       <router-view></router-view>
@@ -17,3 +17,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.app-wrapper {
+  min-height: 100vh;
+  background-color: #f7f7f7;
+}
+</style>

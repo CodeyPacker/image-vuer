@@ -1,5 +1,5 @@
 <template>
-  <div class="ui secondary pointing menu">
+  <div class="navigation ui menu">
     <router-link to="/" class="active item">
       Image Storage
     </router-link>
@@ -37,7 +37,12 @@ export default {
 </script>
 
 <style scoped>
+.navigation {
+  background: white;
+}
+
 .horizontal {
   display: flex;
+  flex-wrap: wrap;
 }
 </style>

@@ -22,6 +22,7 @@ export default {
 
 <style scoped>
   .image-container {
+    margin-top: 50px;
     column-count: 3;
     column-gap: 0;
   }
